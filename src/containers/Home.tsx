@@ -2,8 +2,11 @@ import { useState } from "react"
 import Drawer from "../components/DrawerLayout/Drawer"
 import PokemonCard from "../components/PokemonCard/PokemonCard"
 import Slider from "../components/SliderMenu/Slider"
+import TableComponent from "../components/TableComponent/TableComponent"
 import Center from "../helpers/Center"
 import useQuery from "../hooks/useQuery"
+
+import { TableItemProps } from "../types/types"
 
 const Home = () => {
 
@@ -20,13 +23,13 @@ const Home = () => {
     setPokemonName(e.target.value);
   }
 
+  const tableData : Array<TableItemProps> = Array.from(Array(10), (_, i) => {return { title: String.fromCharCode(65 + i), index: i}} )
+
   return (
     <div className="flex flex-row rounded-md bg-white">
       <Drawer />
       <Center>
-        <Slider count={10}>
-          {Array.from(Array(10), (_, i) => <div className="h-32 w-16">{i}</div>)}
-        </Slider>
+        <TableComponent data={tableData} />
       </Center>
     </div>
   )
