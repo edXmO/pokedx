@@ -8,7 +8,7 @@ import { TableItemProps } from '../../types/types';
 const TableComponent = ({ data } : { data: TableItemProps[]}) => {
 
   return (
-    <div className="w-1/2 h-3/4 py-6 px-6">
+    <div className="flex flex-col w-full py-2 px-4">
       {data.length ? 
       data.map(({title, index}) => <TableItem title={title} index={index} />)
       : 

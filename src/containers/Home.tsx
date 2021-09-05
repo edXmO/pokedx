@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Drawer from "../components/DrawerLayout/Drawer"
 import PokemonCard from "../components/PokemonCard/PokemonCard"
 import Slider from "../components/SliderMenu/Slider"
@@ -23,13 +23,22 @@ const Home = () => {
     setPokemonName(e.target.value);
   }
 
+  useEffect(() => {
+    getPokemon('ditto');
+  }, [])
+
+  useEffect(() => {
+    console.log(pokemonData);
+  }, [pokemonData])
+
   const tableData : Array<TableItemProps> = Array.from(Array(10), (_, i) => {return { title: String.fromCharCode(65 + i), index: i}} )
 
   return (
     <div className="flex flex-row rounded-md bg-white">
       <Drawer />
       <Center>
-        <TableComponent data={tableData} />
+        {/* <TableComponent data={tableData} /> */}
+        <PokemonCard />
       </Center>
     </div>
   )

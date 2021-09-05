@@ -11,3 +11,15 @@ export type TableItemProps = {
   index: number;
 }
 
+export type PokemonCardProps = {
+  id: string;
+  name: string;
+  baseXp: number;
+  height: number;
+  weight: number;
+  abilities: Array<{name: string, isHidden: boolean }>
+
+}
+
+
+
