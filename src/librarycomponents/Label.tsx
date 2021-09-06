@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 
 type LabelTypes = {
-  children: string | number | undefined;
+  children: string | number | undefined | ReactNode;
   className?: string; 
 }
 

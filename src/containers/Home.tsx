@@ -24,7 +24,7 @@ const Home = () => {
   }
 
   useEffect(() => {
-    getPokemon('ditto');
+    getPokemon('charizard');
   }, [])
 
   useEffect(() => {
@@ -35,7 +35,6 @@ const Home = () => {
 
   return (
     <div className="flex flex-row rounded-md bg-white">
-      <Drawer />
       <Center>
         {/* <TableComponent data={tableData} /> */}
         <PokemonCard />

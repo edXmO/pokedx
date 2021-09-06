@@ -1,7 +1,5 @@
-import React from 'react';
 import Label from '../../librarycomponents/Label';
 import { TableItemProps } from '../../types/types';
-
 
 const TableItem = ( { title, index } : TableItemProps ) => {
   return (

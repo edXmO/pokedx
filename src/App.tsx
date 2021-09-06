@@ -5,6 +5,8 @@ import useQuery from './hooks/useQuery';
 import Wrapper from './containers/Wrapper';
 import Home from './containers/Home';
 import { useEffect } from 'react';
+import Navigation from './Navigator/Navigation';
+import { useLocation } from 'react-router';
 
 
 
@@ -12,7 +14,15 @@ function App() {
 
   const [loaded, setLoaded] = useState<boolean>(false);
 
-  const { query } = useQuery();  
+  const { query } = useQuery(); 
+  
+  //Listener 
+  
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log('location changed')
+  }, [location])
 
 
   useEffect(() => {
@@ -23,7 +33,7 @@ function App() {
 
   return (
     <Wrapper loaded={loaded}> 
-      <Home />
+      <Navigation />
     </Wrapper>
   );
 }

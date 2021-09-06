@@ -4,6 +4,8 @@ import {CgMenuLeft, CgMenuLeftAlt, CgPokemon, CgSearch} from 'react-icons/cg';
 import { RiSettings6Line, RiMapLine } from 'react-icons/ri'
 import {FiGithub} from 'react-icons/fi';
 import Label from '../../librarycomponents/Label';
+import { Link } from 'react-router-dom';
+
 
 const Drawer = ({ }) => {
 
@@ -11,42 +13,39 @@ const Drawer = ({ }) => {
   const [selected, setSelected] = useState<boolean>(false);
 
   return (
-    <div className="relative flex-col w-24 min-h-full pt-4 shadow-lg z-10">
-      <DrawerNavigationItem onClick={() => setCollapsed(!collapsed)}>
-        {!collapsed ? 
-          <CgMenuLeftAlt className="w-1/2 h-auto" />
-          :
-          <CgMenuLeft className="w-1/2 h-1/2" />}
-      </DrawerNavigationItem>
-      <DrawerNavigationItem onClick={() => true}>
-          <CgSearch className="w-1/2 h-1/2" />
-      </DrawerNavigationItem>
-      <DrawerNavigationItem onClick={() => true}>
-        <CgPokemon className="w-1/2 h-1/2"/>
-      </DrawerNavigationItem>
-      <DrawerNavigationItem onClick={() => true}>
-        <RiMapLine className="w-1/2 h-1/2"/>
-      </DrawerNavigationItem>
-      <DrawerNavigationItem onClick={() => true}>
-        <RiSettings6Line className="w-1/2 h-1/2"/>
-      </DrawerNavigationItem>
-      {<nav className={`absolute top-4 flex-column items-center justify-center shadow-lg w-40 opacity-0 transform ${collapsed ? 'translate-x-32 opacity-100' : '-translate-x-60 opacity-0'} transition-all duration-500 ease-in-out`}>
-          <div className="w-full h-28 bg-white items-center justify-center">
-            <Label>Home</Label>
-          </div>
-          <div className="w-full h-28 bg-white items-center justify-center">
-            <Label>Hello!</Label>
-          </div>
-          <div className="w-full h-28 bg-white items-center justify-center">
-            <Label>Hello!</Label>
-          </div>
-          <div className="w-full h-28 bg-white items-center justify-center">
-            <Label>Hello!</Label>
-          </div>
-          <div className="w-full h-28 bg-white items-center justify-center">
-            <Label>Hello!</Label>
-          </div>
-      </nav>}
+    <div className="flex-col w-24 min-h-full pt-4 shadow-lg z-10">
+      <Link to="/home">
+        <DrawerNavigationItem onClick={() => setCollapsed(!collapsed)} >
+          {!collapsed ? 
+            <CgMenuLeftAlt className="w-1/2 h-auto" />
+            :
+            <CgMenuLeft className="w-1/2 h-1/2" />}
+        </DrawerNavigationItem>
+      </Link>
+
+      <Link to="/search">
+        <DrawerNavigationItem onClick={() => true}>
+            <CgSearch className="w-1/2 h-1/2" />
+        </DrawerNavigationItem>
+      </Link>
+
+      <Link to="/center">
+        <DrawerNavigationItem onClick={() => true}>
+          <CgPokemon className="w-1/2 h-1/2"/>
+        </DrawerNavigationItem>
+      </Link>
+
+      <Link to="/map">
+        <DrawerNavigationItem onClick={() => true}>
+          <RiMapLine className="w-1/2 h-1/2"/>
+        </DrawerNavigationItem>
+      </Link>
+
+      <Link to="/settings">
+        <DrawerNavigationItem onClick={() => true}>
+          <RiSettings6Line className="w-1/2 h-1/2"/>
+        </DrawerNavigationItem>     
+      </Link>
       <a
         target="_blank"
         href="https://github.com/edXmO"

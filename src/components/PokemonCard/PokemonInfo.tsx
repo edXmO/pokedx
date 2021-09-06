@@ -1,7 +1,6 @@
 import Label from "../../librarycomponents/Label";
 import TableComponent from "../TableComponent/TableComponent";
 
-
 const PokemonInfo = ({ abilities } : { abilities: Array<any> }) => {
   return (
     <div className="w-full">
