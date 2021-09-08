@@ -18,7 +18,15 @@ export type PokemonCardProps = {
   height: number;
   weight: number;
   abilities: Array<{name: string, isHidden: boolean }>
+}
 
+
+export interface LocationParams {
+  pathname: string;
+  // state: Data;
+  search: string;
+  hash: string;
+  key: string;
 }
 
 

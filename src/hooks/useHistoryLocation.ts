@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
-import { useLocation } from "react-router";
+import { useLocation } from "react-router-dom";
 import usePrevious from "./usePrevious";
+import { LocationParams } from "../types/types";
 
 const useHistoryLocation = () => {
 
@@ -11,7 +12,6 @@ const useHistoryLocation = () => {
   useEffect(() => {
     setCurrentLocation(location);
   }, [location])
-
 
   return {
     currentLocation,

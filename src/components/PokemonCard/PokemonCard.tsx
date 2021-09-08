@@ -8,7 +8,7 @@ const PokemonCard = (data : any) => {
   const [ selectedInformation, setSelectedInformation ] = useState<number>(0);
 
   return (
-      <div className="w-80 my-2 h-auto rounded-2xl shadow-lg bg-white">
+      <div className="w-80 h-full rounded-2xl shadow-lg bg-white">
         <PokemonSprite />
         <div className="w-full">
           <PokemonCardInfoSelector 

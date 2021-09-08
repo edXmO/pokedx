@@ -5,10 +5,11 @@ type InputTypes = {
   defaultValue?: string;
   onChange: Function;
   placeholder?: string;
+  style?: string
 }
 
-const InputText = ({ value, onChange, defaultValue, placeholder = 'Search...' } : InputTypes) => {
-  return <div className={`h-14 shadow-md rounded-xl pl-4 flex-column justify-center`}>
+const InputText = ({ value, onChange, defaultValue, placeholder = 'Search...', style = '' } : InputTypes) => {
+  return <div className={`h-14 shadow-md rounded-xl pl-4 flex-column justify-center ${style}`}>
           <input
             name="input-lc"
             type="text"

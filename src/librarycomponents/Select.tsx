@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Modal from './Modal';
 import Label from './Label';
 
@@ -32,6 +32,10 @@ const SelectItem = ({ label, value, onToggle, setItem, index }: { label: string,
 const Select = ({ items, selected, setItem }: SelectProps) => {
 
   const [ open, setOpen ] = useState<boolean>(false);
+
+  useEffect(() => {
+    console.log({items})
+  }, [])  
 
   return (
     <>
